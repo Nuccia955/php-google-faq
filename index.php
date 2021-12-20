@@ -1,7 +1,7 @@
 <!-- Database -->
 <?php
 $db = [
-    $faqs = [
+    'faqs' => [
         [
             //QUESTION
             'question' => "Come state implementando la recente decisione della Corte di giustizia dell'Unione europea (CGUE) relativa al diritto all'oblio?",
@@ -75,12 +75,12 @@ $db = [
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="" alt="">
+        <div class="logo d-flex align-items-center">
+            <img src="https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png" alt="google logo">
             <span>Privacy e termini</span>
         </div>
         <nav>
-            <ul>
+            <ul class="d-flex">
                 <li>
                     <a href="/">Introduzione</a>
                 </li>
@@ -94,10 +94,19 @@ $db = [
                     <a href="/">Tecnologie</a>
                 </li>
                 <li>
-                    <a href="/">Domande frequenti</a>
+                    <a href="/" class="active">Domande frequenti</a>
                 </li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <div class="container">
+            <?php 
+                foreach($db['faqs'] as $question_and_answer) { ?>
+                <h2 class="question"><?php echo $question_and_answer['question'] ?></h2>
+            <?php } ?>
+        </div>
+    </main>
 </body>
 </html>
