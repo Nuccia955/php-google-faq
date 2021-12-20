@@ -70,6 +70,9 @@ $db = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./css/style.css">
     <title>Domande frequenti - Privacy e termini</title>
 </head>
@@ -105,8 +108,18 @@ $db = [
             <?php 
                 foreach($db['faqs'] as $question_and_answer) { ?>
                 <h2 class="question"><?php echo $question_and_answer['question'] ?></h2>
+                <div class="answer">
+                    <?php 
+                    foreach($question_and_answer['answer'] as $answer) { ?> 
+                    <p><?php echo $answer ?></p>
+                    <?php } ?>
+                </div>
             <?php } ?>
         </div>
     </main>
+
+    <footer>
+
+    </footer>
 </body>
 </html>
